@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
 		global.read_lines = getline(&global.line, &global.len, global.file);
 		global.line = _trim(global.line);
 	}
+	free(global.arr_lines);
 	fclose(global.file);
 	free_stack(head);
 	return (0);

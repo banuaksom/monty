@@ -35,6 +35,7 @@ int get_function(stack_t **stack, unsigned int line_number)
 	{
 		dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n",
 				line_number, global.arr_lines);
+		free(global.arr_lines);
 		fclose(global.file);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
