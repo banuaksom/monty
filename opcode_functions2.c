@@ -88,3 +88,24 @@ void div_opcode(stack_t **stack, unsigned int line_number)
 	new_node->n = new_node->n / cur->n;
 	pop_opcode(stack, line_number);
 }
+/**
+ * mul_opcode - divides the second top element of stack by top element
+ * @stack: pointer to the head
+ * @line_number: line number
+ * Return: void
+ */
+void mul_opcode(stack_t **stack, unsigned int line_number)
+{
+	stack_t *cur = *stack;
+	stack_t *new_node;
+
+	if (!cur || !cur->next)
+	{
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	new_node = cur->next;
+	new_node->n = new_node->n * cur->n;
+	pop_opcode(stack, line_number);
+}
