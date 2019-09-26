@@ -1,5 +1,4 @@
 #include "monty.h"
-glo_var global;
 /**
  * argc_fail - checks number of arguments passed
  * @argc: number of argc
