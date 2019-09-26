@@ -33,7 +33,7 @@ int get_function(stack_t **stack, unsigned int line_number)
 	}
 	if (i == 7)
 	{
-		dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n",
+		fprintf(stderr, "L%u: unknown instruction %s\n",
 				line_number, global.arr_lines);
 		free(global.arr_lines);
 		fclose(global.file);

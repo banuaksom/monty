@@ -13,7 +13,7 @@ void push_opcode(stack_t **stack, unsigned int line_number)
 	new_node = malloc(sizeof(stack_t));
 	if (!new_node)
 	{
-		dprintf(STDERR_FILENO, "Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		free(global.arr_lines);
 		fclose(global.file);
 		free_stack(*stack);
@@ -64,7 +64,7 @@ void pint_opcode(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-		dprintf(STDERR_FILENO, "L%u: can't pint, stack empty\n",
+		fprintf(stderr, "L%u: can't pint, stack empty\n",
 				line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -82,7 +82,7 @@ void pop_opcode(stack_t **stack, unsigned int line_number)
 
 	if (!cur)
 	{
-		dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n",
+		fprintf(stderr, "L%u: can't pop an empty stack\n",
 				line_number);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
@@ -109,7 +109,7 @@ void add_opcode(stack_t **stack, unsigned int line_number)
 
 	if (!cur || !cur->next)
 	{
-		dprintf(STDERR_FILENO, "L%u: can't add, stack too short\n",
+		fprintf(stderr, "L%u: can't add, stack too short\n",
 				line_number);
 		exit(EXIT_FAILURE);
 

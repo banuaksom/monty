@@ -7,7 +7,7 @@
  */
 void int_error(stack_t *head, unsigned int i)
 {
-	dprintf(STDERR_FILENO, "L%u: usage: push integer\n", i);
+	fprintf(stderr, "L%u: usage: push integer\n", i);
 	free(global.line);
 	free(global.arr_lines);
 	fclose(global.file);

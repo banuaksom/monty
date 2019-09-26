@@ -24,7 +24,7 @@ void swap_opcode(stack_t **stack, unsigned int line_number)
 
 	if (!(*stack))
 	{
-		dprintf(STDERR_FILENO, "L%u: can't swap, stack too short\n",
+		fprintf(stderr, "L%u: can't swap, stack too short\n",
 				line_number);
 		fclose(global.file);
 		exit(EXIT_FAILURE);
@@ -39,7 +39,7 @@ void swap_opcode(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-		dprintf(STDERR_FILENO, "L%u: can't swap, stack too short\n",
+		fprintf(stderr, "L%u: can't swap, stack too short\n",
 				line_number);
 		fclose(global.file);
 		free_stack(*stack);

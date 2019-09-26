@@ -9,11 +9,11 @@ glo_var global;
 int main(int argc, char *argv[])
 {
 	stack_t *head = NULL;
+	unsigned int line_counter;
 
 	global.line = NULL;
 	global.arr_lines = NULL;
 	global.len = 0;
-	unsigned int line_counter;
 
 	argc_fail(argc);
 	global.file = fopen(argv[1], "r");
