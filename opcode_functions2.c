@@ -46,3 +46,25 @@ void swap_opcode(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 }
+/**
+ * sub_opcode - subtracts
+ * @stack: pointer to the head of a linked list
+ * @line_number: line number
+ * Return: void
+ */
+
+void sub_opcode(stack_t **stack, unsigned int line_number)
+{
+	stack_t *cur = *stack;
+	stack_t *new_node;
+
+	if (!cur || !cur->next)
+	{
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	new_node = cur->next;
+	new_node->n = new_node->n - cur->n;
+	pop_opcode(stack, line_number);
+}
