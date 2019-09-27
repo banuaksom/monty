@@ -9,18 +9,12 @@ int get_function(stack_t **stack, unsigned int line_number)
 {
 	int i;
 	instruction_t ops[] = {
-		{"push", push_opcode},
-		{"pall", pall_opcode},
-		{"pint", pint_opcode},
-		{"pop", pop_opcode},
-		{"swap", swap_opcode},
-		{"add", add_opcode},
-		{"nop", nop_opcode},
-		{"sub", sub_opcode},
-		{"div", div_opcode},
-		{"mul", mul_opcode},
-		{"mod", mod_opcode},
-		{"pchar", pchar_opcode},
+		{"push", push_opcode}, {"pall", pall_opcode},
+		{"pint", pint_opcode}, {"pop", pop_opcode},
+		{"swap", swap_opcode}, {"add", add_opcode},
+		{"nop", nop_opcode}, {"sub", sub_opcode},
+		{"div", div_opcode}, {"mul", mul_opcode},
+		{"mod", mod_opcode}, {"pchar", pchar_opcode},
 		{"pstr", pstr_opcode},
 		{NULL, NULL}};
 
