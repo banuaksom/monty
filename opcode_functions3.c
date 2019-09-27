@@ -30,7 +30,6 @@ void mod_opcode(stack_t **stack, unsigned int line_number)
  * @line_number: the line number
  * Return: void
  */
-
 void pchar_opcode(stack_t **stack, unsigned int line_number)
 {
 	stack_t *cur = *stack;
@@ -43,8 +42,7 @@ void pchar_opcode(stack_t **stack, unsigned int line_number)
 
 	if (cur->n < 0 || cur->n > 127)
 	{
-		fprintf(stderr, "L%u: ", line_number);
-		fprintf(stderr, "can't pchar, value out of range\n");
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", cur->n);

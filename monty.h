@@ -74,4 +74,5 @@ void sub_opcode(stack_t **stack, unsigned int line_number);
 void div_opcode(stack_t **stack, unsigned int line_number);
 void mul_opcode(stack_t **stack, unsigned int line_number);
 void mod_opcode(stack_t **stack, unsigned int line_number);
+void pchar_opcode(stack_t **stack, unsigned int line_number);
 #endif
