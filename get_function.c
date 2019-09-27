@@ -21,6 +21,7 @@ int get_function(stack_t **stack, unsigned int line_number)
 		{"mul", mul_opcode},
 		{"mod", mod_opcode},
 		{"pchar", pchar_opcode},
+		{"pstr", pstr_opcode},
 		{NULL, NULL}};
 
 	if (global.arr_lines[0] == '#')
@@ -28,7 +29,7 @@ int get_function(stack_t **stack, unsigned int line_number)
 		ops[6].f(stack, line_number);
 		return (0);
 	}
-	for (i = 0; i != 12; i++)
+	for (i = 0; i != 13; i++)
 	{
 		if (!(strcmp(ops[i].opcode, global.arr_lines)))
 		{
@@ -36,7 +37,7 @@ int get_function(stack_t **stack, unsigned int line_number)
 			break;
 		}
 	}
-	if (i == 12)
+	if (i == 13)
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n",
 				line_number, global.arr_lines);
