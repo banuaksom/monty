@@ -12,7 +12,7 @@ void mod_opcode(stack_t **stack, unsigned int line_number)
 
 	if (!cur || !cur->next)
 	{
-		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (cur->n == 0)
